@@ -1,6 +1,6 @@
 /*****************************************************/
 /* This program introduces basic SAS programming     */
-/* concepts to programmers new to SAS                */
+/* concepts to programmers new to SAS - CHANGE       */
 /*****************************************************/
 
 /* SET SAS LIBREF */
