@@ -12,7 +12,7 @@
 * CHANGE THE PATH WHERE THE DATA IS LOCATED    *;
 ************************************************;
 %let serverPath = C:\MyDemos\SAS9_Code_Migration\data;
-%let clientPath = C:\MyDemos\SAS9_Code_Migration\data;
+%let serverPath = C:\MyDemos\SAS9_Code_Migration\data;
 
 * Start timer *;
 %let _timer_start = %sysfunc(datetime());  

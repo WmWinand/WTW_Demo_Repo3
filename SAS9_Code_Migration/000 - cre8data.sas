@@ -32,7 +32,7 @@ FILE(S) CREATED:
 * and Compute can access                         *;
 **************************************************;
 /* %let serverPath = C:\MyDemos\SAS9_Code_Migration\data; */
-%let serverPath = /greenmonthly-export/ssemonthly/homes/T.Winand@sas.com/Data/SAS9_Migration_Data;
+%let serverPath = /innovationlab-export/innovationlab/homes/T.Winand@sas.com/Data/SAS9_Migration_Data;
 
 
 ************************************************;
@@ -149,7 +149,7 @@ proc export data=o.discount_lookup
 cas conn;
 
 * Create a caslib reference for the CAS server to the same folder location *;
-caslib ate path="&serverPath";
+/* caslib ate path="&serverPath"; */
 
 * Load the orders_demo.sas7bdat file into CAS and save it as a sashdat file *;
 /* proc cas; */
@@ -169,8 +169,10 @@ caslib ate path="&serverPath";
 /* quit; */
 
 proc casutil;
-  load data=o.orders_demo casout="orders_demo" outcaslib="ate" replace;
-  save casdata="orders_demo" casout="orders_demo.sashdat" outcaslib="ate" replace;
+/*   load data=o.orders_demo casout="orders_demo" outcaslib="ate" replace; */
+  load data=o.orders_demo casout="orders_demo" outcaslib="casuser" replace;
+/*   save casdata="orders_demo" casout="orders_demo.sashdat" outcaslib="ate" replace; */
+  save casdata="orders_demo" casout="orders_demo.sashdat" outcaslib="casuser" replace;
   list tables;
   list files;
 quit;

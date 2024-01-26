@@ -18,7 +18,7 @@ cas mySession sessopts=(caslib=casuser timeout=1800 locale="en_US" metrics=false
 /* EXAMPLES OF CREATING CASLIBS */
 
 /* PATH */
-caslib OLDDATA path="/greenmonthly-export/ssemonthly/homes/T.Winand@sas.com/Git_Repo/SAS_Studio/Data" 
+caslib OLDDATA path="/innovationlab-export/innovationlab/homes/T.Winand@sas.com/Data" 
    datasource=(srctype="path");
 
 /* HDFS */
@@ -46,7 +46,7 @@ caslib OLDDATA path="/greenmonthly-export/ssemonthly/homes/T.Winand@sas.com/Git_
 
 
 /* SET UP LIBRARY REFERENCES */
-%let datapath /greenmonthly-export/ssemonthly/homes/T.Winand@sas.com/Data;
+%let datapath /innovationlab-export/innovationlab/homes/T.Winand@sas.com/Data;
 
 libname mysas "&datapath";
 libname olddata cas caslib=olddata;
@@ -55,6 +55,17 @@ libname mycas cas caslib=casuser;
 caslib _all_ list;
 caslib _all_ assign;
 
+/* proc import datafile="/innovationlab-export/innovationlab/homes/T.Winand@sas.com/Data/customers1.xlsx" */
+/*             dbms=xlsx */
+/*             out=mysas.customers */
+/*             replace; */
+/* run; */
+/*  */
+/* proc import datafile="/innovationlab-export/innovationlab/homes/T.Winand@sas.com/Data/customers2.xlsx" */
+/*             dbms=xlsx */
+/*             out=mysas.customers2 */
+/*             replace; */
+/* run; */
 
 /* LOAD CUSTOMERS DATASET TO CAS USING DATASTEP TO DEFAULt CAS LIBRARY */
 data mycas.mycustomers;
@@ -64,11 +75,7 @@ run;
 proc print data=mycas.mycustomers (obs=10);
 run;
 
-/* proc import datafile="&datapath/customers2.xlsx" */
-/*             dbms=xlsx */
-/*             out=mysas.customers2 */
-/*             replace; */
-/* run; */
+
 
 
 /* LOAD CUSTOMERS DATASET TO CAS USING PROC CASUTIL */

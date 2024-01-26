@@ -5,7 +5,7 @@
 
 /* SET SAS LIBREF */
 /* libname mydata "/greenmonthly-export/ssemonthly/homes/T.Winand@sas.com/Git_Repo/data"; */
-libname mydata "/greenmonthly-export/ssemonthly/homes/T.Winand@sas.com/Data";
+libname mydata "/innovationlab-export/innovationlab/homes/T.Winand@sas.com/Data/Datasets";
 
 
 /* libname mydblib hadoop  */

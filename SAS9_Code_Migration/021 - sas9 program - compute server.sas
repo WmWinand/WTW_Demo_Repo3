@@ -25,7 +25,7 @@
 * STEP 1: Change pathnames for Viya environment                                         *;
 *****************************************************************************************;
 * Set options to view detailed metrics & set Base SAS library *;
-%let serverPath = /greenmonthly-export/ssemonthly/homes/T.Winand@sas.com/Data/SAS9_Migration_Data;
+%let serverPath = /innovationlab-export/innovationlab/homes/T.Winand@sas.com/Data/SAS9_Migration_Data;
 %let clientPath = /greenmonthly-export/ssemonthly/homes/T.Winand@sas.com/Data_csv;
 *****************************************************************************************;
 
@@ -81,7 +81,7 @@ run;
 * STEP 1: Change pathnames for Viya environment                                         *;
 *****************************************************************************************;
 * Import discount_lookup.csv *;
-filename REFFILE DISK '/greenmonthly-export/ssemonthly/homes/T.Winand@sas.com/Data_csv/DISCOUNT_LOOKUP.csv';
+filename REFFILE DISK '/innovationlab-export/innovationlab/homes/T.Winand@sas.com/Data/SAS9_Migration_Data/discount_lookup.csv';
 *****************************************************************************************;
 
 
